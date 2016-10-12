@@ -45,17 +45,24 @@
     android:layout_height="0dp"
     android:layout_weight="1"
     android:background="#00AFFF">
-        <com.testforhome.david.floatingbtntest.CheckSwitchButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
         android:background="#1A34FF">
-
+        <com.testforhome.david.selflistview.slidelistview
+            android:id="@+id/listvie_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000"
+            android:divider="#000000"
+            android:dividerHeight="1.0px"
+            android:drawSelectorOnTop="false"
+            android:listSelector="@android:color/transparent"
+            android:focusable="true"
+            android:scrollbars="none" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

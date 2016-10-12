@@ -1,4 +1,4 @@
-package com.testforhome.david.floatingbtntest;
+package com.testforhome.david.switchbutton;
 
 import android.os.Handler;
 import android.os.Message;

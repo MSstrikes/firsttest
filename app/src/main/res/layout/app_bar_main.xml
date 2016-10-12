@@ -43,6 +43,7 @@
             fab:fab_colorNormal="@color/colorAccent"
             fab:fab_size="mini"
             fab:fab_icon="@drawable/ic_schedule_black_24dp"
+            app:fab_title="定时控制"
             />
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
@@ -51,6 +52,7 @@
             fab:fab_colorNormal="@color/colorAccent"
             fab:fab_size="mini"
             fab:fab_icon="@drawable/ic_touch_app_black_24dp"
+            app:fab_title="快捷键"
             />
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
@@ -59,6 +61,7 @@
             fab:fab_colorNormal="@color/colorAccent"
             fab:fab_size="mini"
             fab:fab_icon="@drawable/ic_track_changes_black_24dp"
+            app:fab_title="自动调整"
             />
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 

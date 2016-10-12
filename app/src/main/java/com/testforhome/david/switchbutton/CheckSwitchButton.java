@@ -1,4 +1,4 @@
-package com.testforhome.david.floatingbtntest;
+package com.testforhome.david.switchbutton;
 
 
 import android.content.Context;
@@ -16,6 +16,8 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.ViewParent;
 import android.widget.CheckBox;
+
+import com.testforhome.david.floatingbtntest.R;
 
 
 /**
@@ -114,11 +116,11 @@ public class CheckSwitchButton extends CheckBox {
 		mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
 
 		// get Bitmap
-		mBottom = BitmapFactory.decodeResource(resources, R.drawable.checkswitch_bottom);
-		mBtnPressed = BitmapFactory.decodeResource(resources,R.drawable.checkswitch_btn_pressed);
-		mBtnNormal = BitmapFactory.decodeResource(resources,R.drawable.checkswitch_btn_unpressed);
-		mFrame = BitmapFactory.decodeResource(resources, R.drawable.checkswitch_frame);
-		mMask = BitmapFactory.decodeResource(resources, R.drawable.checkswitch_mask);
+		mBottom = BitmapFactory.decodeResource(resources, R.mipmap.checkswitch_bottom);
+		mBtnPressed = BitmapFactory.decodeResource(resources,R.mipmap.checkswitch_btn_pressed);
+		mBtnNormal = BitmapFactory.decodeResource(resources,R.mipmap.checkswitch_btn_unpressed);
+		mFrame = BitmapFactory.decodeResource(resources, R.mipmap.checkswitch_frame);
+		mMask = BitmapFactory.decodeResource(resources, R.mipmap.checkswitch_mask);
 		mCurBtnPic = mBtnNormal;
 
 		mBtnWidth = mBtnPressed.getWidth();
