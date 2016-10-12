@@ -30,28 +30,19 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary">
-        <EditText
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Toady"
+            android:textSize="18sp"
             android:paddingLeft="10dp"
-            android:background="@null"
             android:layout_centerVertical="true"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:hint="Enter title,times,people,place"/>
+            android:textColor="@color/white"/>
     </RelativeLayout>
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1"
-    android:background="#00AFFF">
-
-    </LinearLayout>
-    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"
-        android:background="#1A34FF">
+        android:layout_height="match_parent"
+        android:background="@color/white">
         <com.testforhome.david.selflistview.slidelistview
             android:id="@+id/listvie_list"
             android:layout_width="match_parent"
@@ -63,19 +54,5 @@
             android:listSelector="@android:color/transparent"
             android:focusable="true"
             android:scrollbars="none" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"
-        android:background="#FFFAAA">
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"
-        android:background="#1ADF1F">
-
     </LinearLayout>
 </LinearLayout>

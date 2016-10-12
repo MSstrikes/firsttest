@@ -35,7 +35,7 @@ public class DialogFragment extends android.app.DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.dialogfullscreen_main,null);
         Button btn = (Button) rootView.findViewById(R.id.btn_close);
-        for(int i=1;i<=10;i++){
+        for(int i=1;i<=20;i++){
             devName = "第"+i+"个设备名称";
             desprition = "第"+i+"个设备介绍";
             listviewItem item = new listviewItem(devName,desprition);
