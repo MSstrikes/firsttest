@@ -9,6 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Scroller;
 
+import com.testforhome.david.floatingbtntest.DialogFragment;
+
 public class slidelistview extends ListView{
     /**��ֹ�໬ģʽ*/
     public static int MOD_FORBID = 0;
@@ -252,5 +254,7 @@ public class slidelistview extends ListView{
     public void slideBack() {
         this.scrollBack();
     }
+
+
 
 }
