@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         com.github.clans.fab.FloatingActionButton timerFloatingbt = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.gitbutton);
+        com.github.clans.fab.FloatingActionButton timerFloatingbt2 = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.gitbutton2);
+
         timerFloatingbt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,7 +34,13 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(MainActivity.this,"you touch timer",Toast.LENGTH_SHORT).show();
             }
         });
+        timerFloatingbt2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"you touch 2",Toast.LENGTH_SHORT).show();
 
+            }
+        });
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
             this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);

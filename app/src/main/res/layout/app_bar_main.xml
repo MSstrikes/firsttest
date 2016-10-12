@@ -29,32 +29,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
+        android:padding="15dp"
         fab:menu_colorNormal="@color/colorAccent"
         fab:menu_colorPressed="@color/colorAccent"
         fab:fab_labelStyle="@style/menu_labels_style"
         fab:menu_labels_position="left"
         fab:menu_openDirection="up"
-
+        fab:menu_labels_colorNormal="#FF22A3"
+        fab:menu_labels_colorPressed="#FF22A3"
+        fab:menu_labels_colorRipple="@android:color/transparent"
         >
     <com.github.clans.fab.FloatingActionButton
         android:id="@+id/gitbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         fab:fab_size="mini"
-        fab:fab_label="Menu 1"
+        fab:fab_label="快捷键"
         app:fab_colorNormal="@color/colorAccent"
         app:fab_colorPressed="@color/colorAccent"
-        android:src="@drawable/ic_account_balance_black_24dp"
+        android:src="@mipmap/ic_touch_app_black_24dp"
         />
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/gitbutton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             fab:fab_size="mini"
-            fab:fab_label="Menu 2"
+            fab:fab_label="定时控制"
             app:fab_colorNormal="@color/colorAccent"
             app:fab_colorPressed="@color/colorAccent"
-            android:src="@drawable/ic_account_balance_black_24dp"
+            android:src="@mipmap/ic_schedule_black_24dp"
+            />
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/gitbutton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_size="mini"
+            fab:fab_label="自动调整"
+            app:fab_colorNormal="@color/colorAccent"
+            app:fab_colorPressed="@color/colorAccent"
+            android:src="@mipmap/ic_track_changes_black_24dp"
             />
     </com.github.clans.fab.FloatingActionMenu>
 
