@@ -247,9 +247,7 @@ public class CheckSwitchButton extends CheckBox {
 			mBtnInitPos = mChecked ? mBtnOnPos : mBtnOffPos;
 			break;
 		case MotionEvent.ACTION_MOVE:
-			// �϶��ŵ�ʱ��
 			float time = event.getEventTime() - event.getDownTime();
-			// ��ǰ��ť��λ��
 			mBtnPos = mBtnInitPos + event.getX() - mFirstDownX;
 			if (mBtnPos >= mBtnOffPos) {
 				mBtnPos = mBtnOffPos;

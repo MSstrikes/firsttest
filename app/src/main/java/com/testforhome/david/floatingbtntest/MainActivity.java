@@ -1,10 +1,6 @@
 package com.testforhome.david.floatingbtntest;
 
-import android.app.*;
-import android.app.DialogFragment;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, com.testforhome.david.floatingbtntest.DialogFragment.showText {
 
@@ -26,9 +23,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        com.getbase.floatingactionbutton.FloatingActionButton timerFloatingbt = ( com.getbase.floatingactionbutton.FloatingActionButton)findViewById(R.id.timer_fbt);
-        /*FloatingActionButton touchFloatingbt = (FloatingActionButton)findViewById(R.id.touch_fbt);
-        FloatingActionButton scanFloatingbt = (FloatingActionButton)findViewById(R.id.scan_fbt);*/
+        com.github.clans.fab.FloatingActionButton timerFloatingbt = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.gitbutton);
         timerFloatingbt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

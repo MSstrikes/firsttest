@@ -25,44 +25,37 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_main"/>
-
-    <com.getbase.floatingactionbutton.FloatingActionsMenu
-        android:id="@+id/fab_menu"
+    <com.github.clans.fab.FloatingActionMenu
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        fab:fab_addButtonColorNormal="@color/colorAccent"
+        fab:menu_colorNormal="@color/colorAccent"
+        fab:menu_colorPressed="@color/colorAccent"
         fab:fab_labelStyle="@style/menu_labels_style"
-        fab:fab_labelsPosition="left">
+        fab:menu_labels_position="left"
+        fab:menu_openDirection="up"
 
-        <com.getbase.floatingactionbutton.FloatingActionButton
+        >
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/gitbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fab:fab_size="mini"
+        fab:fab_label="Menu 1"
+        app:fab_colorNormal="@color/colorAccent"
+        app:fab_colorPressed="@color/colorAccent"
+        android:src="@drawable/ic_account_balance_black_24dp"
+        />
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/gitbutton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/timer_fbt"
-            fab:fab_colorNormal="@color/colorAccent"
             fab:fab_size="mini"
-            fab:fab_icon="@drawable/ic_schedule_black_24dp"
-            app:fab_title="定时控制"
+            fab:fab_label="Menu 2"
+            app:fab_colorNormal="@color/colorAccent"
+            app:fab_colorPressed="@color/colorAccent"
+            android:src="@drawable/ic_account_balance_black_24dp"
             />
-        <com.getbase.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/touch_fbt"
-            fab:fab_colorNormal="@color/colorAccent"
-            fab:fab_size="mini"
-            fab:fab_icon="@drawable/ic_touch_app_black_24dp"
-            app:fab_title="快捷键"
-            />
-        <com.getbase.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/scan_fbt"
-            fab:fab_colorNormal="@color/colorAccent"
-            fab:fab_size="mini"
-            fab:fab_icon="@drawable/ic_track_changes_black_24dp"
-            app:fab_title="自动调整"
-            />
-    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+    </com.github.clans.fab.FloatingActionMenu>
 
 </android.support.design.widget.CoordinatorLayout>
