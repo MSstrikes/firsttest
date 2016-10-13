@@ -12,9 +12,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.github.clans.fab.FloatingActionMenu;
+
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, com.testforhome.david.floatingbtntest.DialogFragment.showText {
+        implements NavigationView.OnNavigationItemSelectedListener, com.testforhome.david.floatingbtntest.DialogFragment.showText,FloatingActionMenu.OnMenuToggleListener. {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
