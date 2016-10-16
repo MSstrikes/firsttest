@@ -16,7 +16,7 @@ import com.github.clans.fab.FloatingActionMenu;
 
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, com.testforhome.david.floatingbtntest.DialogFragment.showText,FloatingActionMenu.OnMenuToggleListener. {
+        implements NavigationView.OnNavigationItemSelectedListener, com.testforhome.david.floatingbtntest.DialogFragment.showText{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

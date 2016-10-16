@@ -2,7 +2,7 @@ package com.testforhome.david.floatingbtntest;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +23,7 @@ public class DialogFragment extends android.app.DialogFragment implements Adapte
     public List<listviewItem> itemList = new ArrayList<listviewItem>();
     private String devName;
     private String desprition;
+    private int[] colorBackground = {0,R.mipmap.a9,R.mipmap.blue,R.mipmap.f5,R.mipmap.fe,R.mipmap.ff};
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +31,6 @@ public class DialogFragment extends android.app.DialogFragment implements Adapte
 
     }
 
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.dialogfullscreen_main,null);
@@ -82,19 +82,31 @@ public class DialogFragment extends android.app.DialogFragment implements Adapte
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
+            ViewHolder holder = null;
+            int i = (int)(Math.random()*(5));
             listviewItem list = getItem(position);
-            View view;
             if(convertView == null){
-                view = LayoutInflater.from(getContext()).inflate(
+                convertView = LayoutInflater.from(getContext()).inflate(
                         resourceId, null);
+                holder = new ViewHolder();
+                holder.devname = (TextView)convertView.findViewById(R.id.dev_name);
+                holder.descripion = (TextView)convertView.findViewById(R.id.descripions);
+                holder.logo = (TextView) convertView.findViewById(R.id.logo);
+                holder.devname = (TextView)convertView.findViewById(R.id.dev_name);
+                convertView.setTag(holder);
             }else{
-                view = convertView;
+                holder = (ViewHolder)convertView.getTag();
             }
-            TextView dev_name = (TextView)view.findViewById(R.id.dev_name);
-            TextView descripion = (TextView)view.findViewById(R.id.descripions);
-            dev_name.setText(list.getDeviceName());
-            descripion.setText(list.getDescripion());
-            return view;
+            holder.logo.setText("A");
+            holder.logo.setBackgroundResource(colorBackground[i]);
+            holder.devname.setText(list.getDeviceName());
+            holder.descripion.setText(list.getDescripion());
+            return convertView;
         }
+    }
+    static class ViewHolder{
+        public TextView descripion;
+        public TextView logo;
+        public TextView devname;
     }
 }
