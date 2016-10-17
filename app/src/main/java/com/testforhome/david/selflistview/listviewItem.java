@@ -8,9 +8,11 @@ import android.graphics.Bitmap;
 public class listviewItem {
     String deviceName;
     String descripion;
-    public listviewItem(String deviceName,String descripion){
+    int backgroundColor;
+    public listviewItem(String deviceName,String descripion,int backgroundColor){
         this.deviceName = deviceName;
         this.descripion = descripion;
+        this.backgroundColor = backgroundColor;
     }
     public String getDeviceName(){
         return deviceName;
@@ -18,4 +20,5 @@ public class listviewItem {
     public String getDescripion(){
         return descripion;
     }
+    public int getBackgroundColor(){ return backgroundColor; }
 }
