@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.github.clans.fab.FloatingActionMenu;
 
 
 public class MainActivity extends AppCompatActivity
@@ -33,14 +32,14 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 com.testforhome.david.floatingbtntest.DialogFragment dialog = new com.testforhome.david.floatingbtntest.DialogFragment();
                 dialog.show(getFragmentManager(),"DialogFragment");
-                Toast.makeText(MainActivity.this,"you touch timer",Toast.LENGTH_SHORT).show();
             }
         });
         timerFloatingbt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this,"you touch 2",Toast.LENGTH_SHORT).show();
-
+                TimerFragment timerDialog = new TimerFragment();
+                timerDialog.show(getFragmentManager(),"TimerFragment");
             }
         });
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
