@@ -8,7 +8,9 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -27,6 +29,8 @@ public class TimerFragment extends android.app.DialogFragment{
     private int month;
     private int hour;
     private int minute;
+    private String[] repeat = {"不重复","每天","每周","每月","每年","自定义..."};
+    private Spinner repeatSpinner = null;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +40,9 @@ public class TimerFragment extends android.app.DialogFragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        ArrayAdapter<String> adapterRepeat = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item,repeat);
         View rootView = inflater.inflate(R.layout.timerdialog,null);
+        repeatSpinner = (Spinner)rootView.findViewById(R.id.repeat_spinner);
         Calendar calendar = Calendar.getInstance(Locale.CHINA);
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
@@ -45,6 +51,8 @@ public class TimerFragment extends android.app.DialogFragment{
         minute = calendar.get(Calendar.MINUTE);
         showDate = (TextView)rootView.findViewById(R.id.show_datepicker);
         showTime = (TextView)rootView.findViewById(R.id.show_timepicker);
+        adapterRepeat.setDropDownViewResource(R.layout.spinnerlayout);
+        repeatSpinner.setAdapter(adapterRepeat);
         showDate.setOnClickListener(new View.OnClickListener() {
 
 
