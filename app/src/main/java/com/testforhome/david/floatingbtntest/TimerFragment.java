@@ -97,6 +97,12 @@ public class TimerFragment extends android.app.DialogFragment{
         private void updateDate(){
             showDate.setTextColor(Color.parseColor("#000000"));
             showDate.setText(year+"年"+month+"月"+day+"日");
+            Calendar calendar_set = Calendar.getInstance(Locale.CHINA);
+            calendar_set.set(year,month,day);
+            dayOfWeek = calendar_set.get(Calendar.DAY_OF_WEEK)-1;
+            if(dateSetted == true) {
+                repeatButton.setText("请重新设置");
+            }
             dateSetted = true;
         }
     };

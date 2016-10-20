@@ -64,6 +64,27 @@ public class RepeatFragment extends DialogFragment{
                 dismiss();
             }
         });
+        everyweek.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                repeatBtn.setText("每周星期"+dayOfWeek+"重复");
+                dismiss();
+            }
+        });
+        everymonth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                repeatBtn.setText("每月"+day+"日重复");
+                dismiss();
+            }
+        });
+        everyyear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                repeatBtn.setText("每年"+month+"月"+day+"日重复");
+                dismiss();
+            }
+        });
         return rootView;
     }
 
