@@ -6,13 +6,16 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -23,14 +26,16 @@ import java.util.Locale;
 public class TimerFragment extends android.app.DialogFragment{
     private TextView showDate = null;
     private TextView showTime = null;
+    private TextView repeatButton = null;
 
     private int year;
     private int day;
     private int month;
     private int hour;
     private int minute;
-    private String[] repeat = {"不重复","每天","每周","每月","每年","自定义..."};
-    private Spinner repeatSpinner = null;
+    private int dayOfWeek;
+    private boolean dateSetted = false;
+    private boolean timeSetted = false;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,22 +45,18 @@ public class TimerFragment extends android.app.DialogFragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ArrayAdapter<String> adapterRepeat = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item,repeat);
-        View rootView = inflater.inflate(R.layout.timerdialog,null);
-        repeatSpinner = (Spinner)rootView.findViewById(R.id.repeat_spinner);
+        final View rootView = inflater.inflate(R.layout.timerdialog,null);
         Calendar calendar = Calendar.getInstance(Locale.CHINA);
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
         hour = calendar.get(Calendar.HOUR_OF_DAY);
         minute = calendar.get(Calendar.MINUTE);
+        dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
         showDate = (TextView)rootView.findViewById(R.id.show_datepicker);
         showTime = (TextView)rootView.findViewById(R.id.show_timepicker);
-        adapterRepeat.setDropDownViewResource(R.layout.spinnerlayout);
-        repeatSpinner.setAdapter(adapterRepeat);
+        repeatButton = (TextView) rootView.findViewById(R.id.repeat_set_btn);
         showDate.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View v) {
                 DatePickerDialog dateDialog = new DatePickerDialog(getActivity(),Datelistener,year,month,day);
@@ -67,6 +68,18 @@ public class TimerFragment extends android.app.DialogFragment{
             public void onClick(View v) {
                 TimePickerDialog timeDialog = new TimePickerDialog(getActivity(),Timelisterner,hour,minute,true);
                 timeDialog.show();
+            }
+        });
+        repeatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(timeSetted && dateSetted){
+                    RepeatFragment fragment = new RepeatFragment(rootView,year,month,day,dayOfWeek,hour,minute);
+                    fragment.show(getFragmentManager(),"RepeatFragment");
+                }else {
+                    Toast.makeText(getActivity(),"Please set Time and Date first",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
         return rootView;
@@ -84,6 +97,7 @@ public class TimerFragment extends android.app.DialogFragment{
         private void updateDate(){
             showDate.setTextColor(Color.parseColor("#000000"));
             showDate.setText(year+"年"+month+"月"+day+"日");
+            dateSetted = true;
         }
     };
     private TimePickerDialog.OnTimeSetListener Timelisterner = new TimePickerDialog.OnTimeSetListener() {
@@ -96,6 +110,7 @@ public class TimerFragment extends android.app.DialogFragment{
         private void updateTime(){
             showTime.setTextColor(Color.parseColor("#000000"));
             showTime.setText(hour+"点"+minute+"分");
+            timeSetted = true;
         }
     };
 }
