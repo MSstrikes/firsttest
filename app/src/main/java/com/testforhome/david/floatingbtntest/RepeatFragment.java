@@ -50,6 +50,7 @@ public class RepeatFragment extends DialogFragment{
         everyweek = (TextView)rootView.findViewById(R.id.everyweek);
         everymonth = (TextView)rootView.findViewById(R.id.everymonth);
         everyyear = (TextView)rootView.findViewById(R.id.everyyear);
+        diy = (TextView)rootView.findViewById(R.id.diy);
         notRepeat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,6 +84,13 @@ public class RepeatFragment extends DialogFragment{
             public void onClick(View v) {
                 repeatBtn.setText("每年"+month+"月"+day+"日重复");
                 dismiss();
+            }
+        });
+        diy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DiyFragment diyfragment = new DiyFragment();
+                diyfragment.show(getFragmentManager(),"DiyFragment");
             }
         });
         return rootView;
