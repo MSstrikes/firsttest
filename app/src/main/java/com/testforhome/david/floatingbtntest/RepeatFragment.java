@@ -91,6 +91,7 @@ public class RepeatFragment extends DialogFragment{
             public void onClick(View v) {
                 DiyFragment diyfragment = new DiyFragment();
                 diyfragment.show(getFragmentManager(),"DiyFragment");
+                dismiss();
             }
         });
         return rootView;
