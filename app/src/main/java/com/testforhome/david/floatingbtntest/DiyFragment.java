@@ -58,7 +58,7 @@ public class DiyFragment extends DialogFragment{
                 switch (position){
                     case 0: {
                         dayRepeatLayout.setVisibility(View.VISIBLE);
-                        weekRepeatLayout.setVisibility(View.GONE.);
+                        weekRepeatLayout.setVisibility(View.GONE);
                         break;
                     }
                     case 1: {
