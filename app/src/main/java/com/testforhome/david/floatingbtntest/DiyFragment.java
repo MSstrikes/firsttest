@@ -15,16 +15,18 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.testforhome.david.repeatMenuFragment.DayRepeatFragment;
+import com.testforhome.david.repeatMenuFragment.MonthRepeatFragment;
 import com.testforhome.david.repeatMenuFragment.WeekRepeatFragement;
 
 /**
  * Created by Administrator on 2016/10/22 0022.
  */
 public class DiyFragment extends DialogFragment{
-    private String[] frequencyString = {"每天重复","每周重复","每月重复","每年重复"};
+    private String[] frequencyString = {"每天重复","每周重复","每月重复"};
     private Spinner frequencySpinner = null;
     private DayRepeatFragment dayRepeatFragment = null;
     private WeekRepeatFragement weekRepeatFragment = null;
+    private MonthRepeatFragment monthRepeatFragment = null;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,9 +66,16 @@ public class DiyFragment extends DialogFragment{
                         }
                         transaction.replace(R.id.fragment_content,weekRepeatFragment);
                         transaction.commit();
-
                         break;
                         }
+                    case 2:{
+                        if(monthRepeatFragment == null){
+                            monthRepeatFragment = new MonthRepeatFragment();
+                        }
+                        transaction.replace(R.id.fragment_content,monthRepeatFragment);
+                        transaction.commit();
+                        break;
+                    }
                     }
             }
 
