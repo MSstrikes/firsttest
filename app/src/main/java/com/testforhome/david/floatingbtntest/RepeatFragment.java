@@ -89,7 +89,11 @@ public class RepeatFragment extends DialogFragment{
         diy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int[] time = {dayOfWeek,day};
+                Bundle bundle = new Bundle();
+                bundle.putIntArray("time",time);
                 DiyFragment diyfragment = new DiyFragment();
+                diyfragment.setArguments(bundle);
                 diyfragment.show(getFragmentManager(),"DiyFragment");
                 dismiss();
             }

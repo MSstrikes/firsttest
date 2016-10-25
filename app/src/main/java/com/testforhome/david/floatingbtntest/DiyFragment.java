@@ -69,9 +69,11 @@ public class DiyFragment extends DialogFragment{
                         break;
                         }
                     case 2:{
+                        Bundle bundle = getArguments();
                         if(monthRepeatFragment == null){
                             monthRepeatFragment = new MonthRepeatFragment();
                         }
+                        monthRepeatFragment.setArguments(bundle);
                         transaction.replace(R.id.fragment_content,monthRepeatFragment);
                         transaction.commit();
                         break;

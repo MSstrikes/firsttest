@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.testforhome.david.floatingbtntest.R;
@@ -17,6 +20,10 @@ import com.testforhome.david.floatingbtntest.R;
 public class MonthRepeatFragment extends Fragment{
     private String[] repeatTypeString = {"无限重复","直到某个日期","重复一定次数"};
     private Spinner monthRepeatSpinner = null;
+    private RadioGroup selectType = null;
+    private RadioButton sameDayofMonth = null;
+    private RadioButton sameDayofWeek = null;
+    private EditText monthRepeatEdittext = null;
 
     @Nullable
     @Override
@@ -31,6 +38,20 @@ public class MonthRepeatFragment extends Fragment{
         return rootView;
     }
     private void intial(View rootview){
+        Bundle bundle = getArguments();
+        int[] time = bundle.getIntArray("time");
+        int a = time[1]/7;
+        a++;
         monthRepeatSpinner = (Spinner)rootview.findViewById(R.id.monthRepeat_spinner);
+        sameDayofWeek = (RadioButton)rootview.findViewById(R.id.same_dayofweek);
+        monthRepeatEdittext = (EditText)rootview.findViewById(R.id.monthRepeat_editText);
+        sameDayofWeek.setText("每月第"+a+"个星期"+time[0]+"重复");
+        monthRepeatEdittext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                monthRepeatEdittext.setCursorVisible(true);
+            }
+        });
+
     }
 }
