@@ -34,6 +34,8 @@
         fab:menu_colorPressed="@color/colorAccent"
         fab:fab_labelStyle="@style/menu_labels_style"
         fab:menu_labels_position="left"
+        fab:menu_shadowXOffset="0.3dp"
+        fab:menu_shadowYOffset="0.6dp"
         fab:menu_openDirection="up"
         fab:menu_labels_colorNormal="#FF22A3"
         fab:menu_labels_colorPressed="#FF22A3"
@@ -48,6 +50,8 @@
         app:fab_colorNormal="@color/colorAccent"
         app:fab_colorPressed="@color/colorAccent"
         android:src="@mipmap/ic_touch_app_black_24dp"
+        app:fab_shadowXOffset="0.3dp"
+        app:fab_shadowYOffset="0.6dp"
         />
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/gitbutton2"
@@ -58,6 +62,8 @@
             app:fab_colorNormal="@color/colorAccent"
             app:fab_colorPressed="@color/colorAccent"
             android:src="@mipmap/ic_schedule_black_24dp"
+            app:fab_shadowXOffset="0.3dp"
+            app:fab_shadowYOffset="0.6dp"
             />
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/gitbutton3"
@@ -68,6 +74,8 @@
             app:fab_colorNormal="@color/colorAccent"
             app:fab_colorPressed="@color/colorAccent"
             android:src="@mipmap/ic_track_changes_black_24dp"
+            app:fab_shadowXOffset="0.3dp"
+            app:fab_shadowYOffset="0.6dp"
             />
     </com.github.clans.fab.FloatingActionMenu>
 
