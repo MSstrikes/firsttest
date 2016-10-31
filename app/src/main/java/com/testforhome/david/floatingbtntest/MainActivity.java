@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.github.clans.fab.FloatingActionButton;
 
 
 public class MainActivity extends AppCompatActivity
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity
 
         com.github.clans.fab.FloatingActionButton timerFloatingbt = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.gitbutton);
         com.github.clans.fab.FloatingActionButton timerFloatingbt2 = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.gitbutton2);
-
+        FloatingActionButton timerFloatingbt3 = (FloatingActionButton)findViewById(R.id.gitbutton3);
         timerFloatingbt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,9 +38,15 @@ public class MainActivity extends AppCompatActivity
         timerFloatingbt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"you touch 2",Toast.LENGTH_SHORT).show();
                 TimerFragment timerDialog = new TimerFragment();
                 timerDialog.show(getFragmentManager(),"TimerFragment");
+            }
+        });
+        timerFloatingbt3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ControlFragment controlFragment = new ControlFragment();
+                controlFragment.show(getFragmentManager(),"ControlFragment");
             }
         });
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

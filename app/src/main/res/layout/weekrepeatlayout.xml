@@ -99,11 +99,24 @@
             />
 
     </LinearLayout>
-    <Spinner
-        android:id="@+id/weekRepeat_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="15dp"
-        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Spinner
+            android:id="@+id/weekRepeat_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            />
+        <Button
+            android:id="@+id/week_commit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="完成"
+            android:background="@android:color/transparent"
+            />
+    </RelativeLayout>
+
 </LinearLayout>

@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/thumb1_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""/>
+    <io.apptik.widget.MultiSlider
+        android:id="@+id/range_slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:trackColor="@color/yellow"
+        app:thumbNumber="2"
+        app:range1="@drawable/multislider_scrubber_secondary_holo"
+        app:stepsThumbsApart="0"
+        app:drawThumbsApart="false"
+        />
+</LinearLayout>
