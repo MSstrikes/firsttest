@@ -8,15 +8,16 @@
         android:id="@+id/thumb1_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:text=""/>
+
     <io.apptik.widget.MultiSlider
         android:id="@+id/range_slider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:trackColor="@color/yellow"
+        app:trackColor="@color/red"
         app:thumbNumber="2"
-        app:range1="@drawable/multislider_scrubber_secondary_holo"
-        app:stepsThumbsApart="0"
-        app:drawThumbsApart="false"
+        app:range1="@drawable/multislider_scrubber_progress_horizontal_holo_light"
+        app:range2="@drawable/multislider_scrubber_primary_holo"
         />
 </LinearLayout>
