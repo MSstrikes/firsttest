@@ -4,20 +4,84 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/thumb1_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text=""/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        >
+        <Button
+            android:id="@+id/control_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/ic_close_black_24dp"/>
 
-    <io.apptik.widget.MultiSlider
-        android:id="@+id/range_slider"
+    </RelativeLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:trackColor="@color/red"
-        app:thumbNumber="2"
-        app:range1="@drawable/multislider_scrubber_progress_horizontal_holo_light"
-        app:range2="@drawable/multislider_scrubber_primary_holo"
-        />
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="普通电动窗帘"
+            android:textSize="16sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@mipmap/curtainlogo"/>
+            <Button
+                android:id="@+id/curtain_open"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:background="@mipmap/open"/>
+            <Button
+                android:id="@+id/curtain_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30dp"
+                android:scaleY="1.2"
+                android:scaleX="1.2"
+                android:background="@drawable/ic_pause_black_24dp"/>
+            <Button
+                android:id="@+id/curtain_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30dp"
+                android:background="@mipmap/close"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/control_seekbar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:progressDrawable="@drawable/seekbar_background"
+        android:thumb="@drawable/red_scrubber_control_selector_holo_light"
+        android:layout_gravity="center_horizontal"
+        android:max="100"/>
+    <TextView
+        android:id="@+id/test1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"/>
+
 </LinearLayout>

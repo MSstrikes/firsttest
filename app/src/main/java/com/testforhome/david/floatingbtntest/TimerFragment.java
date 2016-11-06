@@ -92,6 +92,7 @@ public class TimerFragment extends android.app.DialogFragment{
         }
         private void updateDate(){
             showDate.setTextColor(Color.parseColor("#000000"));
+            month++;
             showDate.setText(year+"年"+month+"月"+day+"日");
             Calendar calendar_set = Calendar.getInstance(Locale.CHINA);
             calendar_set.set(year,month,day);
