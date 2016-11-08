@@ -49,7 +49,6 @@ public class ControlFragment extends DialogFragment{
             @Override
             public void onStopTrackingTouch(final SeekBar seekBar) {
                 endPlace = seekBar.getProgress();
-                seekBar.setProgress(currentPlace);
                 if(timer == null){
                     timer = new Timer();
                 }
@@ -60,14 +59,14 @@ public class ControlFragment extends DialogFragment{
                             @Override
                             public void run() {
                                 //递增progress数值
-                                    if((seekBar.getProgress() == endPlace) && (timer != null)){
+                                    if((seekBar.getSecondaryProgress() == endPlace) && (timer != null)){
                                         timer.cancel();
                                         timer = null;
                                     }
                                 if(endPlace > currentPlace){
-                                    seekBar.incrementProgressBy(1);
+                                    seekBar.incrementSecondaryProgressBy(1);
                                 }else if(endPlace < currentPlace){
-                                    seekBar.incrementProgressBy(-1);
+                                    seekBar.incrementSecondaryProgressBy(-1);
                                 }
                             }
                         });
