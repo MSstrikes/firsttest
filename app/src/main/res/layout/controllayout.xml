@@ -77,6 +77,8 @@
         android:progressDrawable="@drawable/seekbar_background"
         android:thumb="@drawable/red_scrubber_control_selector_holo_light"
         android:layout_gravity="center_horizontal"
+        android:maxHeight="4dp"
+        android:minHeight="4dp"
         android:max="100"/>
     <TextView
         android:id="@+id/test1"
