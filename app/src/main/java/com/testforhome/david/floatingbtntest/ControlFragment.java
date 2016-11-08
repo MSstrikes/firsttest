@@ -59,7 +59,6 @@ public class ControlFragment extends DialogFragment{
                             @Override
                             public void run() {
                                 //递增progress数值
-                                int a;
                                     if((seekBar.getSecondaryProgress() == endPlace) && (timer != null)){
                                         timer.cancel();
                                         timer = null;
